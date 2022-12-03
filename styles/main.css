@@ -1,11 +1,10 @@
 body{
     margin: 0;
     padding: 0;
-    background-image: url("../images/maxresdefault.jpg");
+    background-image: url("../images/Hogwarts_Experience_1.jpg");
     overflow: hidden;
-    background-repeat: no-repeat;
-
-
+    background-size: cover;
+    width: 100%;
 }
 
 h1{
@@ -14,21 +13,77 @@ h1{
     color: red;
     font-size: 50px;
 }
+h2{
+    text-align: center;
+    text-transform: capitalize;
+    color: red;
+    font-size: 20px;
+}
+ul{
+    display: flex;
+    flex-direction: column;
+}
+ul li{
+ 
+ color: crimson;
+ font-size: 15px;
+ font-weight: bold;
+}
 #instructions{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+#start-button{
+    background-color: red;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow:0px 5px ;
+}
+
+#start-button a{
+    text-decoration: none;
+    color: yellow
+}
 #game-body{
+    background-image: url("../images/maxresdefault.jpg");
     text-align: center;
-    color: blue;
+    color: red;
     font-size: 40px;
+}
+#navbar{
+    display: flex;
+    justify-content: center;
 }
 #game-body h1{
     text-align: center;
     color: blue;
     font-size: 20px;
+}
+#game-backbutton {
+    background-color: red;
+    margin-top: 10px;
+    margin-left: 10px;
+    padding: 5px;
+    border : 1px solid black;
+    border-radius: 5px;
+    box-shadow: 0px 2px;
+
+}
+.button :hover{
+cursor: pointer;
+}
+.button :active{
+    margin-top: 5px;
+    color: black;
+     box-shadow: 0px 0px;
+}
+
+#game-backbutton a{
+    color: yellow;
+    text-decoration: none;
 }
 #board{
     width: 90vw;
@@ -44,7 +99,14 @@ h1{
     width: 20vw;
     height: 20vh;
     background-image: url("../images/23568-1-harry-potter-broom-clipart.png");
-    background-color: aqua;
+    
     background-size: 20vw 20vh;
     position:absolute;
+}
+#obstacle{
+    width: 10vw;
+    height: 20vh;
+    background-image: url("../images/Bludger-foundable.png");
+    background-size: 10vw 20vh ;
+    position : absolute;
 }
