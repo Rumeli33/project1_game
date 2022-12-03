@@ -1,3 +1,21 @@
 body{
-    background-color: aqua;
+    margin: 0;
+    padding: 0;
+    background-image: url("../images/maxresdefault.jpg");
+    overflow: hidden;
+    background-repeat: no-repeat;
+
+
+}
+h1{
+    text-align: center;
+    text-transform: uppercase;
+    color: red;
+    font-size: 50px;
+}
+#instructions{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
