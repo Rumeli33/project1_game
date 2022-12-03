@@ -7,6 +7,7 @@ body{
 
 
 }
+
 h1{
     text-align: center;
     text-transform: uppercase;
@@ -18,4 +19,32 @@ h1{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+#game-body{
+    text-align: center;
+    color: blue;
+    font-size: 40px;
+}
+#game-body h1{
+    text-align: center;
+    color: blue;
+    font-size: 20px;
+}
+#board{
+    width: 90vw;
+    height: 80vh;
+    border: 5px solid orange;
+    margin: auto;
+    position: relative;
+    background-image: url("../images/maxresdefault.jpg");
+    background-size: 90vw 80vh;
+    display: flex;
+}
+#player{
+    width: 20vw;
+    height: 20vh;
+    background-image: url("../images/23568-1-harry-potter-broom-clipart.png");
+    background-color: aqua;
+    background-size: 20vw 20vh;
+    position:absolute;
 }
