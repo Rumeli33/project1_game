@@ -99,7 +99,7 @@ cursor: pointer;
     width: 20vw;
     height: 20vh;
     background-image: url("../images/23568-1-harry-potter-broom-clipart.png");
-    
+    background-color: aqua;
     background-size: 20vw 20vh;
     position:absolute;
 }
@@ -108,5 +108,6 @@ cursor: pointer;
     height: 20vh;
     background-image: url("../images/Bludger-foundable.png");
     background-size: 10vw 20vh ;
+    background-color: bisque;
     position : absolute;
 }

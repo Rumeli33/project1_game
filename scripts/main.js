@@ -89,15 +89,24 @@ document.addEventListener("keydown", (event) => {
 setInterval(() => {
   bludgerArr.forEach((element) => {
     element.moveObstacles();
+
+    ////////////////// Collision Detection ////////////////////////////////////////////////////////////////////////////
+
+    if (
+      player.positionX + player.width > element.positionX &&
+      player.positionY === element.positionY
+    ) {
+      location.href = "../gameover.html";
+    }
   });
 }, 500);
 
-//////////////////////// Creating multiple Bludgers randomly /////////////////////////////////////////////////////////////
+//////////////////////// Creating multiple Bludgers randomly /////////////////////////////////////////////////////
 
 setInterval(() => {
   generateBludgers();
 }, 2000);
-//////////////////// Generate positions for multiple bludgers //////////////////////////////////////////////////////////
+//////////////////// Generate positions for multiple bludgers ////////////////////////////////////////////////////
 
 function generateBludgers() {
   let positionsArr = [10, 30, 50]; // creating array for bludger positions so that collision can happen.
