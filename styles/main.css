@@ -17,7 +17,7 @@ h2{
     text-align: center;
     text-transform: capitalize;
     color: red;
-    font-size: 20px;
+    font-size: 40px;
 }
 ul{
     display: flex;
@@ -26,7 +26,7 @@ ul{
 ul li{
  
  color: crimson;
- font-size: 15px;
+ margin: 5px;
  font-weight: bold;
 }
 #instructions{
@@ -34,13 +34,26 @@ ul li{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+#howtoplay{
+    background-color:beige;
+    border: 2px solid darkslategray;
+    border-radius: 20px;
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 #start-button{
     background-color: red;
     padding: 5px;
     border: 1px solid black;
     border-radius: 5px;
     box-shadow:0px 5px ;
+    margin: 30px;
+    padding: 10px;
+    font-size: 30px;
 }
 
 #start-button a{
@@ -51,27 +64,38 @@ ul li{
     background-image: url("../images/maxresdefault.jpg");
     text-align: center;
     color: red;
-    font-size: 40px;
+    font-size: 30px;
 }
+
 #navbar{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    height: auto;
 }
+#score{
+    font-size: 30px;
+    display: inline-flex;
+
+}
+
 #game-body h1{
     text-align: center;
-    color: blue;
-    font-size: 20px;
+    color: red;
+    font-size: 40px;
 }
 #game-backbutton {
     background-color: red;
-    margin-top: 10px;
-    margin-left: 10px;
+    margin: 10px;
+
+   
     padding: 5px;
     border : 1px solid black;
-    border-radius: 5px;
+    border-radius: 4px;
     box-shadow: 0px 2px;
+    font-size: 25px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
 
-}
 .button :hover{
 cursor: pointer;
 }
@@ -96,11 +120,11 @@ cursor: pointer;
     display: flex;
 }
 #player{
-    width: 17vw;
+    width: 15vw;
     height: 20vh;
     background-image: url("../images/23568-1-harry-potter-broom-clipart.png");
     
-    background-size: 17vw 20vh;
+    background-size: 15vw 20vh;
     position:absolute;
 }
 #obstacle{
@@ -119,3 +143,57 @@ cursor: pointer;
     position: absolute;
     background-color: aqua;
 }
+#points{
+    display : flex;
+    justify-content: space-around;
+    color:red;
+    border: 2px solid red;
+    border-radius: 30px;
+    margin : 20px;
+    background-color:lemonchiffon;
+    
+    }
+    .final-points{
+        font-size: 30px;
+    display: inline-flex;
+    margin-left: 20px;
+    }
+    .final-snitches{
+        font-size: 30px;
+    display: inline-flex;
+    margin-left: 20px;
+    }
+    #button-box{
+        display: flex;
+        justify-content: center;
+    }
+    #try-again-btn{
+        background-color: red;
+        margin-top: 10px;
+        margin-left: 10px;
+        padding: 5px;
+        border : 1px solid black;
+        border-radius: 5px;
+        box-shadow: 0px 2px;
+        font-size: 30px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    #try-again-btn a{
+        color: yellow;
+        text-decoration: none;
+    }
+    #goback-gameover{
+        background-color: red;
+        margin-top: 10px;
+        margin-left: 10px;
+        padding: 5px;
+        border : 1px solid black;
+        border-radius: 5px;
+        box-shadow: 0px 2px;
+        font-size: 30px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    #goback-gameover a{
+        color: yellow;
+        text-decoration: none;
+    }

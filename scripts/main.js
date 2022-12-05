@@ -2,7 +2,7 @@
 
 class Player {
   constructor() {
-    this.width = 17;
+    this.width = 15;
     this.height = 20;
     this.positionY = 40 - this.height / 2; // initial position is centered on Y axis.
     this.positionX = 0;
@@ -59,7 +59,7 @@ class Obstacle {
     boardElm.appendChild(this.domElement);
   }
   moveObstacles() {
-    this.positionX -= 20;
+    this.positionX -= 10;
     this.domElement.style.left = this.positionX + "vw";
   }
 }
@@ -82,9 +82,27 @@ class Snitch extends Obstacle {
   }
 }
 
+/////////////////////////// /////// Create Score class //////////////////////////////////////////////
+
+class Score {
+  constructor() {
+    this.currentScore = 0;
+    this.collectedSnitch = 0;
+    this.element = document.getElementById("score");
+    this.elementSnitch = document.getElementById("snitch-num");
+  }
+  update() {
+    this.element.innerText = this.currentScore.toString();
+  }
+  collectSnitch(){
+    this.elementSnitch.innerText = this.collectedSnitch.toString();
+  }
+}
+
 //////////////////////// Declare global variables and create instance of Player./////////////////////////
 
 const player = new Player();
+let score = new Score();
 let frame = 0;
 let bludgerArr = [];
 let snitchArr = [];
@@ -99,7 +117,7 @@ document.addEventListener("keydown", (event) => {
     player.moveDown();
   }
 });
-//////////////////////// Creating multiple Bludgers and Snitches randomly and moving them //////////////////////////////////////////
+//////////////////////// Creating multiple Bludgers and Snitches randomly and moving them //////////////
 
 setInterval(() => {
   frame++;
@@ -123,6 +141,19 @@ function generateBludgers() {
 function generateSnitches() {
   let positionsArr = [10, 30, 50]; // creating array for snitch positions so that collision can happen.
   let index = positionsArr[Math.floor(Math.random() * positionsArr.length)];
+  if (index === player.positionY) {
+    switch (index) {
+      case 10:
+        index = index * 2;
+        break;
+      case 20:
+        index = index / 2;
+        break;
+      case 30:
+        index = index / 3;
+        break;
+    }
+  }
 
   const newSnitch = new Snitch(index, 10);
   snitchArr.push(newSnitch);
@@ -132,31 +163,47 @@ function generateSnitches() {
 
 const intervalid1 = setTimeout(() => {
   setInterval(() => {
-    if (frame % 20 === 0 && snitchArr.length < 1) {
+    if (frame % 60 === 0 && snitchArr.length < 1) {
       generateSnitches(); // generate snitch only one at a time in the viewport.
     }
-
     collisionDetection(snitchArr);
-  }, 500);
-}, 10000);
+  }, 300);
+}, 30000);
 
 function collisionDetection(obstacleArr) {
   obstacleArr.forEach((element) => {
-    element.moveObstacles();                       // Moving bludgers or snitches 
+    let typeOfObstacle = element.domElement.id;
+    element.moveObstacles(); // Moving bludgers or snitches
     if (
       player.positionX + player.width > element.positionX &&
       player.positionY === element.positionY
     ) {
-      if (element.domElement.id === "obstacle") {
-        location.href = "../gameover.html";
-      } else if (element.domElement.id === "snitch") {
-        location.href = "../winwin.html";
+      if (typeOfObstacle === "obstacle") {
+        gameOver();
+      } else if (typeOfObstacle === "snitch") {
+        score.currentScore += 1000;
+        score.update();
+        score.collectedSnitch += 1;
+        score.collectSnitch();
+        element.domElement.remove();
+      obstacleArr.shift();
       }
     }
     ///check if we need to remove current obstacle
     if (element.positionX <= 0 - element.width) {
+      if (typeOfObstacle === "obstacle") {
+        score.currentScore += 100;
+        score.update();
+      }
       element.domElement.remove();
       obstacleArr.shift(); // remove the obstacle instance from the array as well.
     }
   });
+
+  function gameOver() {
+    localStorage.setItem("finalScore", score.currentScore.toString());
+    localStorage.setItem("numberOfSnitches", score.collectedSnitch.toString());
+    location.href = "../gameover.html";
+    
+  }
 }
