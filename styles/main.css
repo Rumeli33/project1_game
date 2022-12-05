@@ -34,14 +34,14 @@ ul li{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 20px;
+    font-size: 15px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 #howtoplay{
     background-color:beige;
     border: 2px solid darkslategray;
     border-radius: 20px;
-    font-size: 20px;
+    font-size: 15px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -51,9 +51,9 @@ ul li{
     border: 1px solid black;
     border-radius: 5px;
     box-shadow:0px 5px ;
-    margin: 30px;
+    margin: 10px;
     padding: 10px;
-    font-size: 30px;
+    font-size: 15px;
 }
 
 #start-button a{
@@ -77,11 +77,13 @@ ul li{
     display: inline-flex;
 
 }
-
+#heading{
+    display: inline-flex;
+}
 #game-body h1{
     text-align: center;
     color: red;
-    font-size: 40px;
+    font-size: 20px;
 }
 #game-backbutton {
     background-color: red;
@@ -92,8 +94,8 @@ ul li{
     border : 1px solid black;
     border-radius: 4px;
     box-shadow: 0px 2px;
-    font-size: 25px;
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     }
 
 .button :hover{
