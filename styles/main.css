@@ -1,201 +1,239 @@
-body{
-    margin: 0;
-    padding: 0;
-    background-image: url("../images/Hogwarts_Experience_1.jpg");
-    overflow: hidden;
-    background-size: cover;
-    width: 100%;
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("../images/Hogwarts_Experience_1.jpg");
+  overflow: hidden;
+  background-size: cover;
+  width: 100%;
 }
 
-h1{
-    text-align: center;
-    text-transform: uppercase;
-    color: red;
-    font-size: 50px;
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  color: red;
+  font-size: 30px;
 }
-h2{
-    text-align: center;
-    text-transform: capitalize;
-    color: red;
-    font-size: 40px;
+h2 {
+  text-align: center;
+  text-transform: capitalize;
+  color: red;
+  font-size: 20px;
 }
-ul{
-    display: flex;
-    flex-direction: column;
+ul {
+  display: flex;
+  flex-direction: column;
 }
-ul li{
- 
- color: crimson;
- margin: 5px;
- font-weight: bold;
+ul li {
+  color: crimson;
+  margin: 5px;
+  font-weight: bold;
 }
-#instructions{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 15px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+#instructions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
-#howtoplay{
-    background-color:beige;
-    border: 2px solid darkslategray;
-    border-radius: 20px;
-    font-size: 15px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-#start-button{
-    background-color: red;
-    padding: 5px;
-    border: 1px solid black;
-    border-radius: 5px;
-    box-shadow:0px 5px ;
-    margin: 10px;
-    padding: 10px;
-    font-size: 15px;
+#howtoplay {
+  background-color: beige;
+  border: 2px solid darkslategray;
+  border-radius: 20px;
+  font-size: 15px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
-#start-button a{
-    text-decoration: none;
-    color: yellow
-}
-#game-body{
-    background-image: url("../images/maxresdefault.jpg");
-    text-align: center;
-    color: red;
-    font-size: 30px;
+#start-button {
+  background-color: red;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 0px 5px;
+  margin: 5px;
+  padding: 5px;
+  font-size: 15px;
 }
 
-#navbar{
-    display: flex;
-    justify-content: space-evenly;
-    height: auto;
+#start-button a {
+  text-decoration: none;
+  color: yellow;
 }
-#score{
-    font-size: 30px;
-    display: inline-flex;
+#game-body {
+  background-image: url("../images/maxresdefault.jpg");
+  text-align: center;
+  color: red;
+  font-size: 30px;
+}
 
+#navbar {
+  display: flex;
+  justify-content: space-evenly;
+  height: auto;
 }
-#heading{
-    display: inline-flex;
+#score {
+  font-size: 30px;
+  display: inline-flex;
 }
-#game-body h1{
-    text-align: center;
-    color: red;
-    font-size: 20px;
+#heading {
+  display: inline-flex;
+}
+#game-body h1 {
+  text-align: center;
+  color: red;
+  font-size: 20px;
 }
 #game-backbutton {
-    background-color: red;
-    margin: 10px;
+  background-color: red;
+  margin: 10px;
 
-   
-    padding: 5px;
-    border : 1px solid black;
-    border-radius: 4px;
-    box-shadow: 0px 2px;
-    font-size: 15px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    }
-
-.button :hover{
-cursor: pointer;
-}
-.button :active{
-    margin-top: 5px;
-    color: black;
-     box-shadow: 0px 0px;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 4px;
+  box-shadow: 0px 2px;
+  font-size: 15px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
-#game-backbutton a{
-    color: yellow;
-    text-decoration: none;
+.button :hover {
+  cursor: pointer;
 }
-#board{
-    width: 90vw;
-    height: 80vh;
-    border: 5px solid orange;
-    margin: auto;
-    position: relative;
-    background-image: url("../images/maxresdefault.jpg");
-    background-size: 90vw 80vh;
-    display: flex;
+.button :active {
+  margin-top: 5px;
+  color: black;
+  box-shadow: 0px 0px;
 }
-#player{
-    width: 15vw;
-    height: 20vh;
-    background-image: url("../images/23568-1-harry-potter-broom-clipart.png");
-    
-    background-size: 15vw 20vh;
-    position:absolute;
+
+#game-backbutton a {
+  color: yellow;
+  text-decoration: none;
 }
-#obstacle{
-    width: 10vw;
-    height: 20vh;
-    background-image: url("../images/Bludger-foundable.png");
-    background-size: 10vw 20vh ;
-    
-    position : absolute;
+#board {
+  width: 90vw;
+  height: 80vh;
+  border: 5px solid orange;
+  margin: auto;
+  position: relative;
+  background-image: url("../images/maxresdefault.jpg");
+  background-size: 90vw 80vh;
+  display: flex;
 }
-#snitch{
-    width : 10vw;
-    height: 10vh;
-    background-image: url("../images/snitch_transparent.png");
-    background-size: 10vw 10vh;
-    position: absolute;
-    background-color: aqua;
+#player {
+  width: 15vw;
+  height: 20vh;
+  background-image: url("../images/23568-1-harry-potter-broom-clipart.png");
+
+  background-size: 15vw 20vh;
+  position: absolute;
 }
-#points{
-    display : flex;
+#obstacle {
+  width: 10vw;
+  height: 20vh;
+  background-image: url("../images/Bludger-foundable.png");
+  background-size: 10vw 20vh;
+
+  position: absolute;
+}
+
+#dementor {
+  width: 10vw;
+  height: 20vh;
+  background-image: url("../images/dementor-removebg-preview.png");
+  background-size: 10vw 20vh;
+
+  position: absolute;
+}
+#snitch {
+  width: 10vw;
+  height: 10vh;
+  background-image: url("../images/snitch_transparent.png");
+  background-size: 10vw 10vh;
+  position: absolute;
+  background-color: aqua;
+}
+#points {
+  display: flex;
+  justify-content: space-around;
+  color: red;
+  border: 2px solid red;
+  border-radius: 30px;
+  margin: 20px;
+  background-color: lemonchiffon;
+}
+#levelup{
+    display: none;
+    align-items: center;
+    width: 60vw;
+    height: 40vh;
+    align-items: center;
+    background-image: url("../images/levelup.png");
+    background-size: 60vw 40vh;
+    z-index: 2;
+}
+.final-points {
+  font-size: 30px;
+  display: inline-flex;
+  margin-left: 20px;
+}
+.final-snitches {
+  font-size: 30px;
+  display: inline-flex;
+  margin-left: 20px;
+}
+#audio{
+    display: inline-flex;
     justify-content: space-around;
-    color:red;
-    border: 2px solid red;
-    border-radius: 30px;
-    margin : 20px;
-    background-color:lemonchiffon;
-    
-    }
-    .final-points{
-        font-size: 30px;
-    display: inline-flex;
-    margin-left: 20px;
-    }
-    .final-snitches{
-        font-size: 30px;
-    display: inline-flex;
-    margin-left: 20px;
-    }
-    #button-box{
-        display: flex;
-        justify-content: center;
-    }
-    #try-again-btn{
-        background-color: red;
-        margin-top: 10px;
-        margin-left: 10px;
-        padding: 5px;
-        border : 1px solid black;
-        border-radius: 5px;
-        box-shadow: 0px 2px;
-        font-size: 30px;
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    }
-    #try-again-btn a{
-        color: yellow;
-        text-decoration: none;
-    }
-    #goback-gameover{
-        background-color: red;
-        margin-top: 10px;
-        margin-left: 10px;
-        padding: 5px;
-        border : 1px solid black;
-        border-radius: 5px;
-        box-shadow: 0px 2px;
-        font-size: 30px;
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    }
-    #goback-gameover a{
-        color: yellow;
-        text-decoration: none;
-    }
+    align-items: center;
+}
+#soundOn{
+    width: min-content;
+    height: min-content;
+    padding: 1px;
+    background-image: url("../images/audio_on.svg");
+}
+#button-box {
+  display: flex;
+  justify-content: center;
+}
+#try-again-btn {
+  background-color: red;
+  margin-top: 10px;
+  margin-left: 10px;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 0px 2px;
+  font-size: 30px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+#try-again-btn a {
+  color: yellow;
+  text-decoration: none;
+}
+#goback-gameover {
+  background-color: red;
+  margin-top: 10px;
+  margin-left: 10px;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 0px 2px;
+  font-size: 30px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+#goback-gameover a {
+  color: yellow;
+  text-decoration: none;
+}
+#spell {
+  width: 2vw;
+  height: 0.9vh;
+  background-size: 2vw 0.9vh;
+  position: absolute;
+  background-color: rgb(76, 0, 255);
+}
