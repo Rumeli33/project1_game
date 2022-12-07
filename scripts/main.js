@@ -154,7 +154,7 @@ class Game {
 
     //////////////////////////checking Level Up ///////////////////////////////////////////////////////
     const chkLevelUp = () => {
-        let possibleScoresArrLevel1 = [1000,1100,1200,1300,1400,1500,1600,1700,1800,1900];
+        let possibleScoresArrLevel1 = [2000,2100,2200,2300,2400,2500,2600,2700,2800,2900];
         let possibleScoresArrLevel2 = [5000,5100,5200,5300,5400,5500,5600,5700,5800,5900];
         if(this.currentLevel.level === 1 && possibleScoresArrLevel1.includes(this.score.currentScore)){
             stopGame();
