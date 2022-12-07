@@ -5,8 +5,17 @@ body {
   overflow: hidden;
   background-size: cover;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-
+#title {
+  width: 100vw;
+  height: 17vh;
+  background-image: url("../images/title_game.png");
+  background-repeat: no-repeat;
+  margin-left: 270px;
+}
 h1 {
   text-align: center;
   text-transform: uppercase;
@@ -39,9 +48,11 @@ ul li {
 }
 #howtoplay {
   background-color: beige;
+  opacity: 0.7;
   border: 2px solid darkslategray;
   border-radius: 20px;
   font-size: 15px;
+  padding: 5px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
@@ -72,13 +83,33 @@ ul li {
   display: flex;
   justify-content: space-evenly;
   height: auto;
+  font-weight: bolder;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 #score {
   font-size: 30px;
   display: inline-flex;
+  color: blue;
+}
+#health {
+  font-size: 30px;
+  display: inline-flex;
+  color: blue;
+}
+#snitch-num {
+  font-size: 30px;
+  display: inline-flex;
+  color: blue;
+}
+#level-num {
+  font-size: 30px;
+  display: inline-flex;
+  color: blue;
 }
 #heading {
   display: inline-flex;
+  justify-content: center;
 }
 #game-body h1 {
   text-align: center;
@@ -88,12 +119,11 @@ ul li {
 #game-backbutton {
   background-color: red;
   margin: 10px;
-
   padding: 5px;
   border: 1px solid black;
   border-radius: 4px;
   box-shadow: 0px 2px;
-  font-size: 15px;
+  font-size: 12px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
@@ -151,28 +181,55 @@ ul li {
   height: 10vh;
   background-image: url("../images/snitch_transparent.png");
   background-size: 10vw 10vh;
+  background-repeat: no-repeat;
   position: absolute;
-  background-color: aqua;
 }
+#levelup {
+  display: none;
+  width: 50vw;
+  height: 40vh;
+  margin-left: 10vw;
+  margin-top: 0vh;
+  justify-content: space-between;
+  position: relative;
+}
+
+#level-img {
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/LevelUp.gif");
+  background-size: 50vw 40vh;
+  background-repeat: no-repeat;
+  position: absolute;
+}
+
+#level-text {
+  width: 45.6vw;
+  border: 0.2vw solid red;
+  background-color: black;
+  text-align: center;
+  font-size: 2vw;
+  color: gold;
+  text-transform: uppercase;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  margin-top: 40vh;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  position: absolute;
+}
+
 #points {
   display: flex;
   justify-content: space-around;
+  width: 50%;
   color: red;
   border: 2px solid red;
   border-radius: 30px;
-  margin: 20px;
+  margin-left: 25vw;
   background-color: lemonchiffon;
 }
-#levelup{
-    display: none;
-    align-items: center;
-    width: 60vw;
-    height: 40vh;
-    align-items: center;
-    background-image: url("../images/levelup.png");
-    background-size: 60vw 40vh;
-    z-index: 2;
-}
+
 .final-points {
   font-size: 30px;
   display: inline-flex;
@@ -183,16 +240,16 @@ ul li {
   display: inline-flex;
   margin-left: 20px;
 }
-#audio{
-    display: inline-flex;
-    justify-content: space-around;
-    align-items: center;
+#audio {
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: center;
 }
-#soundOn{
-    width: min-content;
-    height: min-content;
-    padding: 1px;
-    background-image: url("../images/audio_on.svg");
+#soundOn {
+  width: min-content;
+  height: min-content;
+  padding: 1px;
+  background-image: url("../images/audio_on.svg");
 }
 #button-box {
   display: flex;

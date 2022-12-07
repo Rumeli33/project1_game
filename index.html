@@ -1,33 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Game Project</title>
-    <link rel="stylesheet" href="./styles/main.css">
-</head>
-<body>
-    <audio src="./audio/background_music.mp3" controls autoplay loop></audio>
-   <h1>Let's Play Quidditch!!!</h1> 
-   <div id ="instructions">
-    <h2>How To Play</h2>
-    <section id ="howtoplay">
-       <ul>
-        <li>Click the Start Game button to start the game</li>
-        <li> Your aim is to save the player from the oncoming Bludgers and collect points.</li>
-        <li> Move the player UP or DOWN using the UP and DOWN arrow keys. <br>
-             Dodging a Bludger gives you 100 points.
-        </li>
-       <li> Collect as many Snitches as possible to score higher. <br>
-        1 Snitch = 1000 points.</li>
-        <li>If you hit a bludger, it's GAME OVER.</li>
-        <li>Click the RESTART button to play again</li>
-       </ul>
-        
-    </section>
-    <button type="button" id = "start-button"><a href="./game.html">Start Game</a></button>
-   </div>
+   
 
-</body>
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+  <body>
+    <audio src="./audio/background_music.mp3" controls autoplay loop></audio>
+    <div id ="title"></div>
+    <div id="instructions">
+      <section id="howtoplay">
+        <h2>How To Play</h2>
+        <ul>
+          <li>Click the Start Game button to start the game</li>
+          <li>
+            Your aim is to save Harry Potter from <br />
+            the oncoming Bludgers and collect points.
+          </li>
+          <li>
+            Move Harry UP or DOWN using the UP and DOWN arrow keys. <br />
+            Dodging a Bludger gives you 100 points.
+          </li>
+          <li>
+            Collect as many Snitches as possible to score higher. <br />
+            1 Snitch = 1000 points.
+          </li>
+          <li>
+            Avoid Dementors!! A collision can cost 10 points off Harry's health.
+            <br />
+            Shoot them using Spacebar and earn 500 points.
+          </li>
+          <li>If you hit a bludger, it's GAME OVER.</li>
+          <li>Click the RESTART button to play again</li>
+        </ul>
+      </section>
+      <button type="button" id="start-button">
+        <a href="./game.html">Start Game</a>
+      </button>
+    </div>
+  </body>
 </html>
