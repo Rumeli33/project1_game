@@ -187,7 +187,7 @@ class Game {
         "numberOfSnitches",
         this.score.collectedSnitch.toString()
       );
-      location.href = "../gameover.html";
+      location.href = "./gameover.html";
     };
   }
 
