@@ -14,7 +14,7 @@ class Game {
     this.score = 0;
     this.startInterval = 0;
     this.restartInterval = 0;
-    this.backgroundmusic = new Audio("../audio/background_music.mp3");
+    this.backgroundmusic = new Audio("./audio/background_music.mp3");
     this.playerMove = new Audio("../audio/harry_moving.wav");
     this.bludgerHit = new Audio("../audio/bludger_thud.wav");
     this.snitchCatch = new Audio("../audio/snitch_catch.wav");
