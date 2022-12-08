@@ -26,24 +26,24 @@ class Game {
     this.currentLevel = new LevelUp();
     this.attachEventlisteners();
     const updateGame = () => {
-            this.startInterval = setInterval(() => {
-            this.score.update();
-            this.score.updateHealth();
-            this.score.collectSnitch();
-            this.score.levelNum = this.currentLevel.level;
-            this.score.updateLevel();
-            this.backgroundmusic.play();
-            this.frame += 1;
-            generateBludgers();
-            collisionDetection(this.bludgerArr);
-            generateSnitches();
-            collisionDetection(this.snitchArr);
-            generateDementors();
-            collisionDetection(this.dementorArr);
-            spellVsDementor(this.dementorArr);
-            chkLevelUp(); // checking for Level
-          }, 400-100*(this.currentLevel.level-1));
-    }
+      this.startInterval = setInterval(() => {
+        this.score.update();
+        this.score.updateHealth();
+        this.score.collectSnitch();
+        this.score.levelNum = this.currentLevel.level;
+        this.score.updateLevel();
+        this.backgroundmusic.play();
+        this.frame += 1;
+        generateBludgers();
+        collisionDetection(this.bludgerArr);
+        generateSnitches();
+        collisionDetection(this.snitchArr);
+        generateDementors();
+        collisionDetection(this.dementorArr);
+        spellVsDementor(this.dementorArr);
+        chkLevelUp(); // checking for Level
+      }, 400 - 100 * (this.currentLevel.level - 1));
+    };
     updateGame();
     const generateBludgers = () => {
       // creating array for bludger positions so that collision can happen.
@@ -102,9 +102,8 @@ class Game {
           if (typeOfObstacle === "obstacle") {
             this.bludgerHit.play();
             const intervalid1 = setTimeout(() => {
-                gameOver();
+              gameOver();
             }, 500);
-            
           } else if (typeOfObstacle === "snitch") {
             this.snitchCatch.play();
             this.score.currentScore += 1000;
@@ -159,40 +158,52 @@ class Game {
 
     //////////////////////////checking Level Up ///////////////////////////////////////////////////////
     const chkLevelUp = () => {
-        let possibleScoresArrLevel1 = [2000,2100,2200,2300,2400,2500,2600,2700,2800,2900];
-        let possibleScoresArrLevel2 = [5000,5100,5200,5300,5400,5500,5600,5700,5800,5900];
-        let possibleScoresArrLevel3 = [10000,10100,10200,10300,10400,10500,10600,10700,10800,10900];
-        if(this.currentLevel.level === 1 && possibleScoresArrLevel1.includes(this.score.currentScore)){
-            stopGame();
-            this.currentLevel.changeLevel();
-            this.score.updateLevel();
-            restartGame();
-        }
-        else if(this.currentLevel.level === 2 && possibleScoresArrLevel2.includes(this.score.currentScore)){
-            stopGame();
-            this.score.updateLevel();
-            this.currentLevel.changeLevel();
-            restartGame();
-        }
-        else if(this.currentLevel.level === 3 && possibleScoresArrLevel3.includes(this.score.currentScore)){
-            stopGame();
-            this.score.updateLevel();
-            this.currentLevel.changeLevel();
-            restartGame();
-        }
-    }
+      let possibleScoresArrLevel1 = [
+        2000, 2100, 2200, 2300, 2400, 2500, 2600, 2700, 2800, 2900,
+      ];
+      let possibleScoresArrLevel2 = [
+        5000, 5100, 5200, 5300, 5400, 5500, 5600, 5700, 5800, 5900,
+      ];
+      let possibleScoresArrLevel3 = [
+        10000, 10100, 10200, 10300, 10400, 10500, 10600, 10700, 10800, 10900,
+      ];
+      if (
+        this.currentLevel.level === 1 &&
+        possibleScoresArrLevel1.includes(this.score.currentScore)
+      ) {
+        stopGame();
+        this.currentLevel.changeLevel();
+        this.score.updateLevel();
+        restartGame();
+      } else if (
+        this.currentLevel.level === 2 &&
+        possibleScoresArrLevel2.includes(this.score.currentScore)
+      ) {
+        stopGame();
+        this.score.updateLevel();
+        this.currentLevel.changeLevel();
+        restartGame();
+      } else if (
+        this.currentLevel.level === 3 &&
+        possibleScoresArrLevel3.includes(this.score.currentScore)
+      ) {
+        stopGame();
+        this.score.updateLevel();
+        this.currentLevel.changeLevel();
+        restartGame();
+      }
+    };
 
     const restartGame = () => {
-        this.restartInterval = setTimeout(() => {
-            this.currentLevel.hideLevelUp();
-            updateGame();
-        }, 3000);
-    }
+      this.restartInterval = setTimeout(() => {
+        this.currentLevel.hideLevelUp();
+        updateGame();
+      }, 3000);
+    };
 
     const stopGame = () => {
-        clearInterval(this.startInterval);
-    }
-
+      clearInterval(this.startInterval);
+    };
 
     ////////////////////////////////Game Over ///////////////////////////////////////////////////////////
     const gameOver = () => {
@@ -389,48 +400,47 @@ class Score {
   updateHealth() {
     this.elementHealth.innerText = this.playerHealth.toString(); // update player health after hitting dementors.
   }
-  updateLevel(){
+  updateLevel() {
     this.elementLevel.innerText = this.levelNum.toString(); // update the current Level of play
   }
 }
 
-class LevelUp{
-    constructor(){
-        this.level = 1;
-        this.width = 60;
-        this.height = 40;
-        this.positionX = 10;
-        this.positionY = 20;
-        this.domElement = null;
-        this.createDomElement();
-    }
-    createDomElement() {
-        this.domElement = document.createElement("div");
-        this.domElement.id = "levelup";
-        this.domElement.style.width = this.width + "vw";
-        this.domElement.style.height = this.height + "vh";
-        this.domElement.style.top = this.positionY + "vh";
-        this.domElement.style.left = this.positionX + "vw";
-        this.domElementChild= document.createElement("span");
-        this.domElementChildImg = document.createElement("div");
-        this.domElementChildImg.id = "level-img";
-        this.domElementChild.id = "level-text";
-        const boardElm = document.getElementById("board");
-        boardElm.appendChild(this.domElement);
-        this.domElement.appendChild(this.domElementChildImg);
-        this.domElement.appendChild(this.domElementChild);
+class LevelUp {
+  constructor() {
+    this.level = 1;
+    this.width = 60;
+    this.height = 40;
+    this.positionX = 10;
+    this.positionY = 20;
+    this.domElement = null;
+    this.createDomElement();
+  }
+  createDomElement() {
+    this.domElement = document.createElement("div");
+    this.domElement.id = "levelup";
+    this.domElement.style.width = this.width + "vw";
+    this.domElement.style.height = this.height + "vh";
+    this.domElement.style.top = this.positionY + "vh";
+    this.domElement.style.left = this.positionX + "vw";
+    this.domElementChild = document.createElement("span");
+    this.domElementChildImg = document.createElement("div");
+    this.domElementChildImg.id = "level-img";
+    this.domElementChild.id = "level-text";
+    const boardElm = document.getElementById("board");
+    boardElm.appendChild(this.domElement);
+    this.domElement.appendChild(this.domElementChildImg);
+    this.domElement.appendChild(this.domElementChild);
+  }
 
-      }
-
-    changeLevel(){
-        this.level +=1;
-        this.domElementChild.innerHTML = "";
-        this.domElementChild.innerHTML = "Level "+this.level;
-        this.domElement.style.display = "flex";
-    }
-    hideLevelUp(){
-        this.domElement.style.display = "none";
-    }
+  changeLevel() {
+    this.level += 1;
+    this.domElementChild.innerHTML = "";
+    this.domElementChild.innerHTML = "Level " + this.level;
+    this.domElement.style.display = "flex";
+  }
+  hideLevelUp() {
+    this.domElement.style.display = "none";
+  }
 }
 //////////////////////// Declare global variables and create instance of Player./////////////////////////
 

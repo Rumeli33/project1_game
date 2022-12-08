@@ -9,12 +9,21 @@ body {
   flex-direction: column;
   justify-content: center;
 }
+#main-container{
+    display: flex;
+    justify-content: center;
+   align-items: center;
+ 
+   
+}
 #title {
-  width: 100vw;
-  height: 17vh;
+  width: 40vw;
+  height: 12vh;
   background-image: url("../images/title_game.png");
   background-repeat: no-repeat;
-  margin-left: 270px;
+background-size: contain;
+  margin-left: 3vw;
+
 }
 h1 {
   text-align: center;
