@@ -353,8 +353,8 @@ class Dementor extends Obstacle {
 
 class Spell {
   constructor(x, y) {
-    this.width = 2;
-    this.height = 2;
+    this.width = 10;
+    this.height = 10;
     this.positionX = x;
     this.positionY = y;
     this.domElement = null;

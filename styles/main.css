@@ -297,9 +297,12 @@ ul li {
   text-decoration: none;
 }
 #spell {
-  width: 2vw;
-  height: 0.9vh;
-  background-size: 2vw 0.9vh;
+  width: 10vw;
+  height: 10vh;
+  background-size: 10vw 10vh;
   position: absolute;
-  background-color: rgb(76, 0, 255);
+  background-image: url("../images/patronus.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+ 
 }
