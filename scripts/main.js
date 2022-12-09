@@ -135,12 +135,12 @@ class Game {
       });
     };
 
-    const spellVsDementor = (demArr) => {
+    const spellVsDementor = (demArr) => {                /// collision of shooting spell with dementors.
       demArr.forEach((element, index1) => {
         this.spellArr.forEach((bullet, index) => {
           if (
             bullet.positionX + bullet.width > element.positionX &&
-            bullet.positionY - this.player.height / 2 === element.positionY
+            bullet.positionY === element.positionY + element.height / 2
           ) {
             element.receiveDamage(bullet.strength);
             this.score.currentScore += 500;
@@ -194,18 +194,18 @@ class Game {
       }
     };
 
-    const restartGame = () => {
+    const restartGame = () => {                              // Restart the game after level up.
       this.restartInterval = setTimeout(() => {
         this.currentLevel.hideLevelUp();
         updateGame();
       }, 3000);
     };
 
-    const stopGame = () => {
+    const stopGame = () => {                                 // Stop the game.
       clearInterval(this.startInterval);
     };
 
-    ////////////////////////////////Game Over ///////////////////////////////////////////////////////////
+    ////////////////////////////////   Game Over ///////////////////////////////////////////////////////////
     const gameOver = () => {
       localStorage.setItem("finalScore", this.score.currentScore.toString());
       localStorage.setItem(
@@ -228,7 +228,7 @@ class Game {
         this.player.moveDown();
       } else if (event.key === " ") {
         this.shootSpell.play();
-        const spell = new Spell( // generate bullets on hitting space.
+        const spell = new Spell(                              // Generate bullets on hitting space.
           this.player.positionX + this.player.width / 2,
           this.player.positionY + this.player.height / 2
         );
@@ -404,6 +404,7 @@ class Score {
     this.elementLevel.innerText = this.levelNum.toString(); // update the current Level of play
   }
 }
+////////////////////////////// Creating Level Class //////////////////////////////////////////////
 
 class LevelUp {
   constructor() {
@@ -442,7 +443,7 @@ class LevelUp {
     this.domElement.style.display = "none";
   }
 }
-//////////////////////// Declare global variables and create instance of Player./////////////////////////
+//////////////////////// Declare global variables /////////////////////////
 
 const game = new Game();
 game.start();

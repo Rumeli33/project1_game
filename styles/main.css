@@ -9,21 +9,18 @@ body {
   flex-direction: column;
   justify-content: center;
 }
-#main-container{
-    display: flex;
-    justify-content: center;
-   align-items: center;
- 
-   
+#main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #title {
   width: 40vw;
   height: 12vh;
   background-image: url("../images/title_game.png");
   background-repeat: no-repeat;
-background-size: contain;
+  background-size: contain;
   margin-left: 3vw;
-
 }
 h1 {
   text-align: center;
@@ -164,7 +161,6 @@ ul li {
   width: 15vw;
   height: 20vh;
   background-image: url("../images/23568-1-harry-potter-broom-clipart.png");
-
   background-size: 15vw 20vh;
   position: absolute;
 }
@@ -304,5 +300,4 @@ ul li {
   background-image: url("../images/patronus.png");
   background-repeat: no-repeat;
   background-size: contain;
- 
 }
